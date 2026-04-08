@@ -286,19 +286,6 @@ Recall-weighted F-beta (β=1.5). Missing an eligible scheme is penalised more th
 
 ---
 
-## Hackathon submission checklist
-
-- [ ] GitHub repo created and all files pushed
-- [ ] HF Space created (Docker type, port 7860)
-- [ ] `docker build -f server/Dockerfile .` passes
-- [ ] HF Space deployed and `GET /health` returns 200
-- [ ] `openenv validate` passes
-- [ ] `python inference.py` completes under 20 minutes
-- [ ] All 3 tasks produce scores in [0.0, 1.0]
-- [ ] ENV_URL in inference.py updated to HF Space URL before submission
-
----
-
 ## License
 MIT — built for Meta × Hugging Face OpenEnv Hackathon 2026.
 =======
