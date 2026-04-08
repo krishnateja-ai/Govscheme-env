@@ -1,0 +1,43 @@
+name: govscheme-env
+version: "1.0.0"
+description: >
+  Government Scheme Eligibility Matching — OpenEnv environment.
+  Simulates the real-world task of identifying, ranking, and applying for
+  Indian government welfare schemes on behalf of citizens.
+  Covers 18 central schemes: PM-KISAN, Ayushman Bharat, MGNREGA, PMAY-G,
+  NSP Scholarships, Ujjwala Yojana, PMSBY, PMJJBY, APY, PMEGP, KCC,
+  PMFBY, Stand-Up India, Weavers MUDRA, PMVVY, and more.
+
+tags:
+  - openenv
+  - real-world
+  - government
+  - india
+  - welfare
+  - eligibility
+  - form-filling
+  - social-impact
+
+tasks:
+  - id: scheme_identification
+    difficulty: easy
+    description: "Identify all government schemes a citizen is eligible for"
+    max_steps: 3
+    score_range: [0.0, 1.0]
+
+  - id: scheme_ranking
+    difficulty: medium
+    description: "Rank eligible schemes by annual benefit value with justification"
+    max_steps: 3
+    score_range: [0.0, 1.0]
+
+  - id: form_filling
+    difficulty: hard
+    description: "Auto-fill a complete government application form from citizen profile without hallucinating"
+    max_steps: 3
+    score_range: [0.0, 1.0]
+
+server:
+  port: 7860
+  dockerfile: server/Dockerfile
+  entrypoint: "uvicorn app:app --host 0.0.0.0 --port 7860"

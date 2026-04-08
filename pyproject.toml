@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "govscheme-env"
+version = "1.0.0"
+description = "OpenEnv environment for Indian Government Scheme Eligibility Matching"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = ["openenv", "rl", "government", "india", "welfare", "eligibility"]
+
+dependencies = [
+    "requests>=2.32.0",
+    "openai>=1.30.0",
+]
+
+[project.optional-dependencies]
+server = [
+    "fastapi==0.111.0",
+    "uvicorn[standard]==0.30.1",
+    "pydantic>=2.7.0",
+    "python-multipart==0.0.9",
+]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["govscheme_env*"]
