@@ -419,7 +419,10 @@ def schemes():
     }
 
 
-if __name__ == "__main__":
+def main():
     import uvicorn
     port = int(os.getenv("PORT", 7860))
     uvicorn.run("app:app", host="0.0.0.0", port=port, reload=False)
+
+if __name__ == "__main__":
+    main()
