@@ -1,14 +1,14 @@
 """
-server/govscheme_environment.py
+govscheme_environment.py
 
 The GovSchemeEnvironment class.
 Implements reset() / step() / state  — the three OpenEnv core methods.
 
 How an episode works:
   1. Client calls reset(task_name, citizen_id, seed)
-     → environment picks a citizen, pre-computes gold answers, returns observation
+     -> environment picks a citizen, pre-computes gold answers, returns observation
   2. Client calls step(action) up to 3 times
-     → grader scores the action, returns (observation, reward, done)
+     -> grader scores the action, returns (observation, reward, done)
   3. done=True when max steps hit or perfect score achieved
 """
 from __future__ import annotations
@@ -63,8 +63,8 @@ class GovSchemeEnvironment:
     Government Scheme Eligibility Matching Environment.
 
     Attributes loaded at startup (from JSON files in same directory):
-        _schemes   — 18 Indian government schemes with eligibility rules
-        _citizens  — 10 diverse citizen profiles with verified gold labels
+        _schemes   -- 18 Indian government schemes with eligibility rules
+        _citizens  -- 10 diverse citizen profiles with verified gold labels
     """
 
     def __init__(self):
@@ -93,7 +93,7 @@ class GovSchemeEnvironment:
         task_name: str = "scheme_identification",
         citizen_id: Optional[str] = None,
         seed: Optional[int] = None,
-    ) -> "GovSchemeObservation":   # returns an observation
+    ) -> "GovSchemeObservation":
         """
         Start a new episode.
 
@@ -105,7 +105,7 @@ class GovSchemeEnvironment:
             seed:       RNG seed (set this for reproducible runs).
 
         Returns:
-            GovSchemeObservation — the first observation the agent sees.
+            GovSchemeObservation -- the first observation the agent sees.
         """
         from models import GovSchemeObservation  # local import to avoid circular
 
@@ -139,10 +139,10 @@ class GovSchemeEnvironment:
         Process one agent action.
 
         Returns:
-            observation  — updated observation
-            reward       — score for this step, float in [0.0, 1.0]
-            done         — True when episode is over
-            info         — dict with score breakdown (for logging)
+            observation  -- updated observation
+            reward       -- score for this step, float in [0.0, 1.0]
+            done         -- True when episode is over
+            info         -- dict with score breakdown (for logging)
         """
         from models import GovSchemeObservation
 
@@ -273,7 +273,7 @@ class GovSchemeEnvironment:
                 "description": "Identify all government schemes a citizen is eligible for",
                 "max_steps": MAX_STEPS,
                 "score_range": [0.0, 1.0],
-                "grader": "F-beta (β=1.5), recall-weighted",
+                "grader": "F-beta (beta=1.5), recall-weighted",
             },
             {
                 "task_id": "scheme_ranking",
