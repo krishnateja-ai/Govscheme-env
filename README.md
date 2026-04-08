@@ -7,7 +7,7 @@ sdk: docker
 app_port: 7860
 pinned: false
 ---
-<<<<<<< HEAD
+
 # GovScheme-Env 🏛️
 
 > **OpenEnv environment — Government Scheme Eligibility Matching**
