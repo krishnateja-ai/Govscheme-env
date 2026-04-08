@@ -1,0 +1,28 @@
+version = 1
+revision = 1
+requires-python = ">=3.10"
+
+[[package]]
+name = "govscheme-env"
+version = "1.0.0"
+source = { editable = "." }
+dependencies = [
+  { name = "fastapi" },
+  { name = "uvicorn", extra = ["standard"] },
+  { name = "pydantic" },
+  { name = "python-multipart" },
+  { name = "requests" },
+  { name = "openai" },
+  { name = "openenv-core" },
+]
+
+[package.metadata]
+requires-dist = [
+  { name = "fastapi", specifier = "==0.111.0" },
+  { name = "uvicorn", extras = ["standard"], specifier = "==0.30.1" },
+  { name = "pydantic", specifier = ">=2.7.0" },
+  { name = "python-multipart", specifier = "==0.0.9" },
+  { name = "requests", specifier = ">=2.32.0" },
+  { name = "openai", specifier = ">=1.30.0" },
+  { name = "openenv-core", specifier = ">=0.2.0" },
+]
