@@ -1,12 +1,4 @@
----
-title: GovScheme-Env
-emoji: 🏛️
-colorFrom: green
-colorTo: blue
-sdk: docker
-app_port: 7860
-pinned: false
----
+
 
 # GovScheme-Env 🏛️
 
@@ -289,6 +281,4 @@ Recall-weighted F-beta (β=1.5). Missing an eligible scheme is penalised more th
 ## License
 MIT — built for Meta × Hugging Face OpenEnv Hackathon 2026.
 =======
-# Govscheme-env
-Government Scheme Eligibility Matching - OpenEnv Environment
->>>>>>> 9c27fee098bfe73ec95d461ddf52b25b6843432c
+
